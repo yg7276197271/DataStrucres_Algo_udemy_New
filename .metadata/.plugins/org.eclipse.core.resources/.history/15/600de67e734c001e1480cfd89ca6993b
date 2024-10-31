@@ -1,0 +1,7 @@
+
+public class FindDuplicateInArray {
+	 public static void main(String args[]) {
+	        int arr[] = {1,3,4,2,3};
+	        System.out.println("The duplicate element is " + findDuplicate(arr));
+	    }
+}

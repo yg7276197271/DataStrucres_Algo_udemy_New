@@ -1,0 +1,9 @@
+
+//Algorithm:
+//First, we’ll start the traversal from the right. Then, we move toward the left. 
+//Whenever we encounter a new element, we check with the greatest element obtained so far.
+//If the current element is greater than the greatest so far, 
+//then the current element is one of the leaders and we update the greatest elemen
+public class LeadersInArray {
+
+}

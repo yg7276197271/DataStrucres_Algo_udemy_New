@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class ThreeSum {
+	public static List<List<Integer>> threeSum(int[] num){
+		List<List<Integer>> ans = new ArrayList<>();
+		Arrays.sort(num);
+		
+		for(int i=0;i<num.length-2;i++){ // We can form triplet till we reach to 3rd last element
+			
+			int low = i+1, high = num.length-1, sum= 0 - num[i];
+			if(num[low] + num[high] == sum){
+				ans.add(new ArrayList<Integer>{});
+				
+			}
+		}
+		
+		
+		
+		
+		return ans;
+		
+	}
+	public static void main(String[] args) {
+		threeSum(new int[]{-2,-2,-1,-1,-1,0,0,0,2,2,2});
+	}
+}
+

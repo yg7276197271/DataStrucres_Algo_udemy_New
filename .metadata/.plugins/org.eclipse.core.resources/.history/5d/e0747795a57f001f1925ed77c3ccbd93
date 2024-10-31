@@ -1,0 +1,15 @@
+package Greedy_Algorithm;
+
+public class NonOverlappingIntervals {
+
+	
+	 public static void main(String[] args) {
+	        int[][] arr = {{1, 3}, {8, 10}, {2, 6}, {15, 18}};
+	        int[][] ans = mergeOverlappingIntervals(arr);
+	        System.out.print("The merged intervals are: \n");
+	        for (int[] element : ans) {
+	            System.out.print("[" + element[0] + ", " + element[1] + "] ");
+	        }
+	        System.out.println();
+	    }
+}

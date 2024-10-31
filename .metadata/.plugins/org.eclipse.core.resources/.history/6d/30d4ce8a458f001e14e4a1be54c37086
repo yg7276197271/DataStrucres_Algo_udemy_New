@@ -1,0 +1,32 @@
+package Rod_Cutting_Problem;
+
+import java.util.*;
+
+public class RecursiveApproach {
+	static int cutRodUntil(int ind, int N,int[] cuts) {
+		// Base case: 
+		if (ind == 0) {
+			return ((int) (N) * cuts[0]);
+		}
+		int notTaken = 0 + cutRodUntil(ind-1,N,cuts);
+		int taken = Integer.MIN_VALUE;
+		
+		int rodLength = ind+1;
+		if (rodLength <= N)
+			taken = cuts[ind] + cutRodUntil(ind,N,cuts); //Stay on same index
+		
+		return  Math.max(notTaken, taken);
+	}
+
+	static int minCost(int N, int[] cuts) {
+		
+		return cutRodUntil(N-1,N,cuts);
+	}
+
+	public static void main(String args[]) {
+		int val[] = { 2,5,7,8,10 };
+		int N = 5;
+		// Call the unboundedKnapsack function and print the result
+		System.out.println("Cut Rod until " + minCost(N, W, val, wt));
+	}
+}

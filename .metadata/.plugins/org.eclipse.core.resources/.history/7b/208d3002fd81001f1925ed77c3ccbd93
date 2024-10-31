@@ -1,0 +1,26 @@
+package sorting_algorithms;
+//Time Complexity is o(N logN)
+//Space complexity is o(N)
+public class MergeSortImpl {
+
+	public static void mS(int arr[], int low, int high) {
+
+	
+	}
+
+	public static void merge(int[] arr, int low, int mid, int high) {
+		
+	}
+
+	static void mergeSort(int arr[], int n) {
+		mS(arr, 0, n - 1);
+	}
+	
+	public static void main(String[] args) {
+		int arr[]={12,60,34,1,99,88,0,999,111};
+		mergeSort(arr,arr.length);
+		for(int i=0;i<arr.length;i++){
+			System.out.println(arr[i]+"");
+		}
+	}
+}

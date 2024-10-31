@@ -1,0 +1,37 @@
+package Rod_Cutting_Problem;
+
+import java.util.*;
+
+public class RecursiveApproach {
+	static int cutRodUntil(int ind, int N,int[] cuts) {
+		// Base case: If there are no more items to consider
+		if (ind == 0) {
+			// Calculate and return the maximum value possible
+			return ((int) (N) * cuts[0]);
+		}
+		int notTaken = 0 + cutRodUntil(ind-1,N,cuts);
+		int taken = Integer.MIN_VALUE;
+		int rodLength = ind+1;
+		if (rodLength <= N)
+			taken = cuts[ind] + cutRodUntil(ind,N,cuts);
+
+		
+		return  Math.max(notTaken, taken);
+	}
+
+	// Function to find the maximum value of items that the thief can steal
+	static int minCost(int n, int[] cuts) {
+		
+		// Call the knapsackUtil function to solve the problem
+		return cutRodUntil(cuts, n - 1);
+	}
+
+	public static void main(String args[]) {
+		int val[] = { 2,5,7,8,10 };
+		int N = 5;
+
+
+		// Call the unboundedKnapsack function and print the result
+		System.out.println("The Maximum value of items, the thief can steal is " + unboundedKnapsack(N, W, val, wt));
+	}
+}

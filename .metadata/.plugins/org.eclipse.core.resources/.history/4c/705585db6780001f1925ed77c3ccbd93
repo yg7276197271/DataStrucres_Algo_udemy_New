@@ -1,0 +1,46 @@
+package Greedy_Algorithm;
+
+import java.util.Arrays;
+
+public class ShortestJobFirst {
+	//Smallest execution time first
+	 // Function to calculate average
+    // waiting time using Shortest
+    // Job First algorithm
+    static float shortestJobFirst(int[] jobs) {
+    	
+    	int totalTime=0;
+    	int waitTime=0;
+    	Arrays.sort(jobs); //1, 2, 3, 4, 7
+    	//When first job comes then its waiting time will be 0 And it will be completed at 1st minute
+    	//2nd job came .its waiting time will be 1 minutes. and it will be completed at 3rd minute.
+    	//3rd job came .its waiting time is 3 min. and it will be completed till 6th min
+    	//4th job came its waiting time is 10 min.it will be completed till 10th min.
+    	//5th job came .its waitning time is 20 min it will be completed till 17th min.
+    	
+    	for(int i=0;i<jobs.length;i++){
+    		 // Add current total
+            // time to waiting time
+            waitTime += totalTime;
+
+            // Add current job's
+            // time to total time
+            totalTime += jobs[i];
+    		
+    	}
+    	return waitTime/jobs.length;
+    }
+
+    public static void main(String[] args) {
+        int[] jobs = {4, 3, 7, 1, 2};
+
+        System.out.print("Array Representing Job Durations: ");
+        for (int i = 0; i < jobs.length; i++) {
+            System.out.print(jobs[i] + " ");
+        }
+        System.out.println();
+
+        float ans = shortestJobFirst(jobs);
+        System.out.println("Average waiting time: " + ans);
+    }
+}
